@@ -1,0 +1,45 @@
+name: Publish Python Package to PyPI
+
+on:
+  release:
+    types: [published]  # Dispara apenas quando uma Release é publicada no GitHub
+  # Alternativa: trigger manual para testes controlados
+  workflow_dispatch:
+
+jobs:
+  build-and-publish:
+    runs-on: ubuntu-latest
+    # OPCIONAL: Use se configurou ambiente no Trusted Publisher do PyPI
+    # environment: pypi
+    permissions:
+      id-token: write  # OBRIGATÓRIO para Trusted Publishing
+
+    steps:
+      # 1. Checkout do código
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0  # Importante se usar versioneamento automático
+
+      # 2. Configurar Python
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      # 3. Instalar dependências de build
+      - name: Install build dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install build
+
+      # 4. Construir pacotes (tar.gz e .whl)
+      - name: Build package distributions
+        run: python -m build
+
+      # 5. Publicar no PyPI
+      - name: Publish to PyPI
+        uses: pypa/gh-action-pypi-publish@release/v1
+        with:
+          # Seu Trusted Publisher já configura o destino automaticamente como PyPI principal
+          # verbose: true  # Descomente para logs detalhados em caso de erro
