@@ -1,0 +1,24 @@
+[project]
+name = "pyncbt"
+version = "0.1.0"
+authors = [
+    { name = "Joao Pedro Mendes Leroy", email = "jpmleroy24@gmail.com" }, # Use seu nome/email
+]
+description = "A Python library for NCbT data manipulation and analysis."
+readme = "README.md"
+license = { file = "LICENSE" }
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Operating System :: OS Independent",
+]
+requires-python = ">=3.7"
+dependencies = [
+    "control",
+    "numpy",
+    "scipy",
+    "matplotlib.pyplot",
+]
+
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
