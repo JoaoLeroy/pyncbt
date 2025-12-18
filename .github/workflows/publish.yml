@@ -10,7 +10,7 @@ jobs:
   build-and-publish:
     runs-on: ubuntu-latest
     # OPCIONAL: Use se configurou ambiente no Trusted Publisher do PyPI
-    # environment: pypi
+    environment: pypi
     permissions:
       id-token: write  # OBRIGATÓRIO para Trusted Publishing
 
