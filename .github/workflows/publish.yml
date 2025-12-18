@@ -40,6 +40,4 @@ jobs:
       # 5. Publicar no PyPI
       - name: Publish to PyPI
         uses: pypa/gh-action-pypi-publish@release/v1
-        with:
-          # Seu Trusted Publisher já configura o destino automaticamente como PyPI principal
-          # verbose: true  # Descomente para logs detalhados em caso de erro
+
