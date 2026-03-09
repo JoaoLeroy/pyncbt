@@ -4,7 +4,7 @@ import control as ct
 from scipy.linalg import toeplitz
 
 
-class NCbT:
+class NCbT_open:
     def __init__(self, u_t, y_t, num_M, den_M, Ts, tempo, l, beta):
         self.u_t = np.asarray(u_t).flatten()
         self.y_t = np.asarray(y_t).flatten()
@@ -92,3 +92,4 @@ class NCbT:
         self.zeta_and_phi()    
         rho = self.least_squares() 
         return rho
+
