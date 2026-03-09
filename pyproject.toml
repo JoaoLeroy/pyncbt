@@ -28,5 +28,5 @@ Repository = "https://github.com/JoaoLeroy/pyncbt.git"
 Documentation = "https://JoaoLeroy.github.io/pyncbt"
 
 [tool.setuptools]
-package-dir = {"" = "src"}
+package-dir = {"" = "scr"}
 packages = ["pyncbt"]
