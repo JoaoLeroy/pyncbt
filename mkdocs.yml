@@ -1,1 +1,12 @@
-site_name: My Docs
+
+site_name: pyncbt
+site_url: https://joaoleroy.github.io/pyncbt/  
+repo_url: https://github.com/JoaoLeroy/pyncbt
+repo_name: JoaoLeroy/pyncbt
+
+theme:
+  name: material
+  language: pt
+
+nav:
+  - Início: index.md
