@@ -1,32 +1,33 @@
 [build-system]
-requires = ["setuptools>=61.0", "wheel"]
+requires = ["setuptools>=68", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
 name = "pyncbt"
-version = "0.1.1"
-authors = [
-    { name = "Joao Pedro Mendes Leroy", email = "jpmleroy24@gmail.com" },
-]
-description = "A Python library for Non-iterative Correlation-based Tuning (NCbT)."
-readme = "README.md"
-license = { file = "LICENSE" }
+version = "0.1.1"            
+description = "Non-iterative Correlation-based Tuning (NCbT) for data-driven control"
+
+readme = { file = "README.md", content-type = "text/markdown" }
+requires-python = ">=3.9"
+license = { text = "MIT" }
+authors = [{ name = "João P. M. Leroy" }]
+keywords = ["data-driven control", "NCbT", "control", "identification", "SISO", "LTI", "python"]
+
 classifiers = [
-    "Programming Language :: Python :: 3",
-    "Operating System :: OS Independent",
-]
-requires-python = ">=3.7"
-dependencies = [
-    "numpy",
-    "scipy",
-    "control",
+  "Development Status :: 3 - Alpha",
+  "Intended Audience :: Science/Research",
+  "Topic :: Scientific/Engineering :: Control Systems",
+  "License :: OSI Approved :: MIT License",
+  "Programming Language :: Python :: 3 :: Only",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Operating System :: OS Independent",
 ]
 
 [project.urls]
 Homepage = "https://github.com/JoaoLeroy/pyncbt"
-Repository = "https://github.com/JoaoLeroy/pyncbt.git"
-Documentation = "https://JoaoLeroy.github.io/pyncbt"
-
-[tool.setuptools]
-package-dir = {"" = "scr"}
-packages = ["pyncbt"]
+Documentation = "https://joaoleroy.github.io/pyncbt/" 
+Source = "https://github.com/JoaoLeroy/pyncbt"
+Issues = "https://github.com/JoaoLeroy/pyncbt/issues"
+Changelog = "https://github.com/JoaoLeroy/pyncbt/blob/main/CHANGELOG.md"
