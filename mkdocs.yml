@@ -14,4 +14,4 @@ plugins:
       default_handler: python
       handlers:
         python:
-          paths: [src] # Onde está o seu código.py
+          paths: [scr] # Onde está o seu código.py
