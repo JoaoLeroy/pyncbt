@@ -31,3 +31,9 @@ Documentation = "https://joaoleroy.github.io/pyncbt/"
 Source = "https://github.com/JoaoLeroy/pyncbt"
 Issues = "https://github.com/JoaoLeroy/pyncbt/issues"
 Changelog = "https://github.com/JoaoLeroy/pyncbt/blob/main/CHANGELOG.md"
+
+[tool.setuptools.packages.find]
+where = ["scr"]
+
+[tool.setuptools.package-dir]
+"" = "scr"
