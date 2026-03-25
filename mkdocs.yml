@@ -1,17 +1,39 @@
 site_name: pyncbt
 site_url: https://JoaoLeroy.github.io/pyncbt/
+repo_url: https://github.com/JoaoLeroy/pyncbt
+site_description: Biblioteca de alto desempenho para manipulação de arquivos NBT.
+
 theme:
-  name: material # Visual moderno
+  name: material
+  language: pt-BR
+  logo: docs/img/pyncbt-logo.png # Crie um logo e coloque nesta pasta
+  favicon: logo/favicon.ico
   palette:
-    primary: indigo
-    accent: indigo
+    - scheme: default # Modo claro
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-7
+        name: Mudar para modo escuro
+    - scheme: slate # Modo escuro
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-4
+        name: Mudar para modo claro
   features:
+    - navigation.tabs # Menu no topo igual sites grandes
+    - navigation.sections
+    - navigation.top # Botão de "voltar ao topo"
     - content.code.copy # Botão de copiar código
+    - content.code.annotate
 
 plugins:
   - search
-  - mkdocstrings: # Gera documentação do seu código automaticamente
-      default_handler: python
+  - mkdocstrings:
       handlers:
         python:
-          paths: [scr] # Onde está o seu código.py
+          paths: [src]
+          options:
+            show_source: true # Mostra o código-fonte na documentação
+            show_type_annotations: true
