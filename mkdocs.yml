@@ -37,7 +37,10 @@ plugins:
   - mkdocstrings:
       handlers:
         python:
-          paths: [src]
+          setup_commands:
+            - import sys
+            - sys.path.append("scr")
+          paths: [scr]
           options:
             show_source: true # Mostra o código-fonte na documentação
             show_type_annotations: true
