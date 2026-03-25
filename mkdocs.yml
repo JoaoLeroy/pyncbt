@@ -1,12 +1,17 @@
-
 site_name: pyncbt
-site_url: https://joaoleroy.github.io/pyncbt/  
-repo_url: https://github.com/JoaoLeroy/pyncbt
-repo_name: JoaoLeroy/pyncbt
-
+site_url: https://JoaoLeroy.github.io/pyncbt/
 theme:
-  name: material
-  language: pt
+  name: material # Visual moderno
+  palette:
+    primary: indigo
+    accent: indigo
+  features:
+    - content.code.copy # Botão de copiar código
 
-nav:
-  - Início: index.md
+plugins:
+  - search
+  - mkdocstrings: # Gera documentação do seu código automaticamente
+      default_handler: python
+      handlers:
+        python:
+          paths: [src] # Onde está o seu código.py
