@@ -28,6 +28,10 @@ theme:
     - content.code.copy # Botão de copiar código
     - content.code.annotate
 
+nav:
+  - Início: index.md
+  - Referência da API: api.md
+  
 plugins:
   - search
   - mkdocstrings:
