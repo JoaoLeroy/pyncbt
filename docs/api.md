@@ -1,5 +1,3 @@
-api. md att:
-
 # API reference
 
 This page documents the public API of **pyncbt**.
@@ -30,7 +28,6 @@ Both classes have similar the **interface, parameters, and execution flow**.
 NCbT_open(u, y, num_M, den_M, Ts, t, l, beta)
 
 NCbT_closed(u, y, r, num_M, den_M, Ts, t, l, beta)
-
 ```
 
 ## Purpose
@@ -53,7 +50,6 @@ All basis elements must be stable.
 
 ```python
 rho = estimator.run()
-
 ```
 Executes the NCbT algorithm and computes the controller parameter vector.
 
