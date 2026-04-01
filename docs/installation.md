@@ -9,5 +9,6 @@
 
 ## Install via pip
 
-```bash
+```console
 pip install pyncbt
+```
