@@ -5,6 +5,10 @@ site_description: Non-iterative Correlation-based Tuning in Python
 
 theme:
   name: material
+  features:
+    - navigation.tabs
+    - navigation.sections  
+    - navigation.top
   language: pt-BR
   logo: docs/img/pyncbt-logo.png 
   favicon: docs/img/pyncbt-logo.png 
@@ -29,13 +33,17 @@ theme:
     - content.code.annotate
 
 nav:
-  - Home: index.md
-  - Installation: installation.md
-  - NCbT Overview: ncbt_overview.md
+  - Home:
+      - Overview: index.md
+  - Installation:
+      - Requirements: installation.md
+  - NCbT:
+      - Method overview: ncbt_overview.md
   - Tutorials:
       - Open-loop data: tutorials/open_loop.md
       - Closed-loop data: tutorials/closed_loop.md
-  - API Reference: api.md
+  - API Reference:
+      - NCbT API: api.md
   
 plugins:
   - search
