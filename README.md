@@ -18,12 +18,14 @@
 - **Exemplos reproduzíveis**: dados `.npy`, script de benchmark e notebook no Colab.
 - **Foco em reprodutibilidade**: seeds, versões e métricas reportadas.
 
-> Documentação (em breve): **https://joaoleroy.github.io/pyncbt/**  
+> Documentação: **https://joaoleroy.github.io/pyncbt/**  
 > PyPI: **https://pypi.org/project/pyncbt/**
 
 ---
 
 ## Instalação
 
-```bash
+```console
 pip install pyncbt
+```
+
