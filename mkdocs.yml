@@ -1,13 +1,13 @@
 site_name: pyncbt
 site_url: https://JoaoLeroy.github.io/pyncbt/
 repo_url: https://github.com/JoaoLeroy/pyncbt
-site_description: Biblioteca de alto desempenho para manipulação de arquivos NBT.
+site_description: Non-iterative Correlation-based Tuning in Python
 
 theme:
   name: material
   language: pt-BR
-  logo: docs/img/pyncbt-logo.png # Crie um logo e coloque nesta pasta
-  favicon: logo/favicon.ico
+  logo: docs/img/pyncbt-logo.png 
+  favicon: docs/img/pyncbt-logo.png 
   palette:
     - scheme: default # Modo claro
       primary: indigo
@@ -29,18 +29,13 @@ theme:
     - content.code.annotate
 
 nav:
-  - Início: index.md
-  - Referência da API: api.md
+  - Home: index.md
+  - Installation: installation.md
+  - NCbT Overview: ncbt_overview.md
+  - Tutorials:
+      - Open-loop data: tutorials/open_loop.md
+      - Closed-loop data: tutorials/closed_loop.md
+  - API Reference: api.md
   
 plugins:
   - search
-  - mkdocstrings:
-      handlers:
-        python:
-          setup_commands:
-            - import sys
-            - sys.path.append("scr")
-          paths: [scr]
-          options:
-            show_source: true # Mostra o código-fonte na documentação
-            show_type_annotations: true
