@@ -1,17 +1,34 @@
-# Welcome to MkDocs
 
-For full documentation visit [mkdocs.org](https://www.mkdocs.org).
+# pyncbt
 
-## Commands
+**pyncbt** is an open-source Python library for **Non-iterative Correlation-based Tuning (NCbT)**, a data-driven controller design method for discrete-time SISO LTI systems.
 
-* `mkdocs new [dir-name]` - Create a new project.
-* `mkdocs serve` - Start the live-reloading docs server.
-* `mkdocs build` - Build the documentation site.
-* `mkdocs -h` - Print help message and exit.
+The library enables direct computation of fixed-structure controllers from input–output data, without explicit plant identification or iterative optimization.
 
-## Project layout
+---
 
-    mkdocs.yml    # The configuration file.
-    docs/
-        index.md  # The documentation homepage.
-        ...       # Other markdown pages, images and other files.
+## Key features
+
+- Non-iterative data-driven controller tuning
+- Support for open-loop and closed-loop datasets
+- Instrumental-variable-based noise rejection
+- Reproducible examples and benchmarks
+- Designed for research, teaching, and experimental setups
+
+---
+
+## Typical workflow
+
+1. Collect input–output data (simulation or experiment)
+2. Choose a reference model and controller structure
+3. Estimate weighting filter and instruments
+4. Compute controller parameters via least squares
+
+---
+
+## When to use pyncbt?
+
+- Rapid controller prototyping from experimental data
+- Teaching data-driven control concepts
+- Reproducible research and benchmarking
+- Virtual or physical laboratory setups
