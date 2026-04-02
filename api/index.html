@@ -20,7 +20,7 @@
         
       
       
-      <link rel="icon" href="../docs/img/pyncbt-logo.png">
+      <link rel="icon" href="../docs/img/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
     
     
@@ -1053,7 +1053,6 @@
   
 
 
-<p>api. md att:</p>
 <h1 id="api-reference">API reference</h1>
 <p>This page documents the public API of <strong>pyncbt</strong>.</p>
 <p>The library provides a unified interface for <strong>Non-iterative Correlation-based Tuning (NCbT)</strong> using both open-loop and closed-loop data.<br />
@@ -1074,7 +1073,6 @@ The distinction between open-loop and closed-loop operation lies solely in <stro
 <pre><code class="language-python">NCbT_open(u, y, num_M, den_M, Ts, t, l, beta)
 
 NCbT_closed(u, y, r, num_M, den_M, Ts, t, l, beta)
-
 </code></pre>
 <h2 id="purpose">Purpose</h2>
 <p>Estimate fixed-structure controller parameters directly from input–output data using a correlation-based criterion and instrumental variables.
@@ -1092,7 +1090,6 @@ All basis elements must be stable.</li>
 </ul>
 <h2 id="execution">Execution</h2>
 <pre><code class="language-python">rho = estimator.run()
-
 </code></pre>
 <p>Executes the NCbT algorithm and computes the controller parameter vector.</p>
 <h2 id="assumptions-and-remarks">Assumptions and remarks</h2>
