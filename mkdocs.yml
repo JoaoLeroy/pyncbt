@@ -11,7 +11,7 @@ theme:
     - navigation.top
   language: pt-BR
   logo: docs/img/pyncbt-logo.png 
-  favicon: docs/img/pyncbt-logo.png 
+  favicon: docs/img/favicon.png 
   palette:
     - scheme: default # Modo claro
       primary: indigo
