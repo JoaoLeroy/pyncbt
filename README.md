@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="docs/img/pyncbt-logo.png" width="50%" alt="pyncbt logo">
+  <img src="https://raw.githubusercontent.com/JoaoLeroy/pyncbt/main/docs/img/pyncbt-logo.png" width="50%" alt="pyncbt logo">
 </p>
 
 <h1 align="center">pyncbt · Non-iterative Correlation-based Tuning (NCbT) in Python</h1>
