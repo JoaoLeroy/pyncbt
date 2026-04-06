@@ -9,6 +9,7 @@ import numpy as np
 
 u = np.load("u_t.npy")
 y = np.load("y_t.npy")
+r = np.load("r_t.npy")
 t = np.load("time.npy")
 Ts = 0.05
 ```
