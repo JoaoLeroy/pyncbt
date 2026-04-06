@@ -8,8 +8,6 @@
   <a href="https://pypi.org/project/pyncbt/"><img alt="PyPI" src="https://img.shields.io/pypi/v/pyncbt.svg"></a>
   <a href="https://pypi.org/project/pyncbt/"><img alt="Python Versions" src="https://img.shields.io/pypi/pyversions/pyncbt.svg"></a>
   <a href="LICENSE"><img alt="License" src="https://img.shields.io/badge/license-MIT-blue.svg"></a>
-  <a href="https://github.com/JoaoLeroy/pyncbt/actions"><img alt="CI" src="https://img.shields.io/github/actions/workflow/status/JoaoLeroy/pyncbt/ci.yml?branch=main"></a>
-  <a href="https://codecov.io/gh/JoaoLeroy/pyncbt"><img alt="coverage" src="https://img.shields.io/codecov/c/gh/JoaoLeroy/pyncbt"></a>
   <a href="https://pypi.org/project/pyncbt/"><img alt="Downloads" src="https://img.shields.io/pypi/dm/pyncbt"></a>
 </p>
 
