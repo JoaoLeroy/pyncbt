@@ -8,6 +8,8 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    permissions:
+      id-token: write   # Essencial para evitar erro de OIDC
     steps:
     - uses: actions/checkout@v4
     - name: Set up Python
@@ -17,7 +19,7 @@ jobs:
     - name: Install build dependencies
       run: |
         python -m pip install --upgrade pip
-        pip install build twine wheel   # ← wheel adicionado
+        pip install build twine wheel
     - name: Clean previous builds
       run: |
         rm -rf dist build *.egg-info
