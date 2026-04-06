@@ -35,7 +35,7 @@ pip install pyncbt
 
 Try the examples online without any installation:
 
-> [https://colab.research.google.com/drive/1MlzWRP8eHVUVVPgt1IiL2hqU5SN7gq98?usp=sharing] (Benchmark example (flexible transmission system))  
+> [Benchmark example (flexible transmission system)] (https://colab.research.google.com/drive/1MlzWRP8eHVUVVPgt1IiL2hqU5SN7gq98?usp=sharing)  
 
-> [https://colab.research.google.com/drive/1zblNhjnmtO1QX1wz6xGg9ekQapmgzl7u?usp=sharing] (PI controller for a non‑minimum phase system)
+> [PI controller for a non‑minimum phase system] (https://colab.research.google.com/drive/1zblNhjnmtO1QX1wz6xGg9ekQapmgzl7u?usp=sharing)
 
