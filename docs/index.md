@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="img/pyncbt-logo.png" width="50%" alt="pyncbt logo">
+  <img src="https://raw.githubusercontent.com/JoaoLeroy/pyncbt/main/docs/img/pyncbt-logo.png" width="50%" alt="pyncbt logo">
 </p>
 
 # pyncbt
