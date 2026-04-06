@@ -5,7 +5,7 @@ with open("README.md", "r", encoding="utf-8") as fh:
 
 setup(
     name="pyncbt",
-    version="0.1.12",
+    version="0.1.13",
     author="João P. M. Leroy",
     description="Non-iterative Correlation-based Tuning (NCbT) for data-driven control",
     long_description=long_description,
@@ -23,8 +23,6 @@ setup(
     classifiers=[
         "Development Status :: 3 - Alpha",
         "Intended Audience :: Science/Research",
-        "Topic :: Scientific/Engineering :: Control Systems",
-        # Não inclua classificador de licença
         "Programming Language :: Python :: 3 :: Only",
         "Programming Language :: Python :: 3.10",
         "Programming Language :: Python :: 3.11",
