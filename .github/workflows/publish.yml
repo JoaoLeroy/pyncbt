@@ -8,9 +8,9 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
-    environment: pypi
+    environment: pypi   # <-- ESSENCIAL para corresponder ao publisher
     permissions:
-      id-token: write   # Essencial para evitar erro de OIDC
+      id-token: write
     steps:
     - uses: actions/checkout@v4
     - name: Set up Python
@@ -33,5 +33,4 @@ jobs:
     - name: Publish to PyPI
       uses: pypa/gh-action-pypi-publish@release/v1
       with:
-        password: ${{ secrets.PYPI_API_TOKEN }}
         verbose: true
