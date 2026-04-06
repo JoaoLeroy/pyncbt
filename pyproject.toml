@@ -9,7 +9,7 @@ description = "Non-iterative Correlation-based Tuning (NCbT) for data-driven con
 
 readme = { file = "README.md", content-type = "text/markdown" }
 requires-python = ">=3.9"
-license = { text = "MIT" }
+license = { text = "LICENSE" }
 authors = [{ name = "João P. M. Leroy" }]
 keywords = ["data-driven control", "NCbT", "control", "identification", "SISO", "LTI", "python"]
 
