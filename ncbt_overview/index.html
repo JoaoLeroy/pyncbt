@@ -553,10 +553,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#core-idea" class="md-nav__link">
+  <a href="#problem-setting" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Core idea
+        Problem setting
       
     </span>
   </a>
@@ -564,10 +564,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#advantages" class="md-nav__link">
+  <a href="#correlation-approximation" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Advantages
+        Correlation approximation
       
     </span>
   </a>
@@ -575,10 +575,32 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#mathematical-summary" class="md-nav__link">
+  <a href="#weighting-filter-w" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Mathematical summary
+        Weighting filter \( W \)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#instrumental-variables-and-leastsquares-solution" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Instrumental variables and least‑squares solution
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hyperparameter-choices" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Hyperparameter choices
       
     </span>
   </a>
@@ -830,10 +852,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#core-idea" class="md-nav__link">
+  <a href="#problem-setting" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Core idea
+        Problem setting
       
     </span>
   </a>
@@ -841,10 +863,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#advantages" class="md-nav__link">
+  <a href="#correlation-approximation" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Advantages
+        Correlation approximation
       
     </span>
   </a>
@@ -852,10 +874,32 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#mathematical-summary" class="md-nav__link">
+  <a href="#weighting-filter-w" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Mathematical summary
+        Weighting filter \( W \)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#instrumental-variables-and-leastsquares-solution" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Instrumental variables and least‑squares solution
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hyperparameter-choices" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Hyperparameter choices
       
     </span>
   </a>
@@ -882,33 +926,55 @@
   
 
 
-<h1 id="ncbt-overview">NCbT overview</h1>
-<p>Non-iterative Correlation-based Tuning (NCbT) is a <strong>direct data-driven control method</strong> that computes fixed-structure controller parameters using a single batch of input–output data.</p>
-<hr />
-<h2 id="core-idea">Core idea</h2>
-<p>Instead of explicitly identifying the plant model, NCbT:</p>
-<ul>
-<li>Approximates the model-reference objective</li>
-<li>Uses a correlation-based criterion</li>
-<li>Employs instrumental variables to handle noise</li>
-<li>Solves a single least-squares problem</li>
-</ul>
-<hr />
-<h2 id="advantages">Advantages</h2>
-<ul>
-<li>No plant identification step</li>
-<li>No iterative optimization</li>
-<li>Works with open-loop data</li>
-<li>Transparent bias–variance trade-offs</li>
-</ul>
-<hr />
-<h2 id="mathematical-summary">Mathematical summary</h2>
-<p>NCbT minimizes a correlation criterion that approximates the model-reference cost:</p>
+<h1 id="ncbt-overview">NCbT Overview</h1>
+<p><strong>Non-iterative Correlation-based Tuning (NCbT)</strong> is a direct data-driven control method that tunes fixed‑structure controllers from a single batch of input–output data. It requires no explicit plant model and no iterative optimization.</p>
+<h2 id="problem-setting">Problem setting</h2>
+<p>In model reference control, the goal is to make the closed‑loop system behave like a desired reference model <span class="arithmatex">\( M(q^{-1}) \)</span>. The ideal cost is</p>
 <div class="arithmatex">\[
-J_{\mathrm{MR}} = \left\| M - \frac{KG}{1+KG} \right\|_2^2
+J_{\mathrm{MR}}(\rho) = \left\| M - \frac{K(\rho)G}{1+K(\rho)G} \right\|_2^2,
 \]</div>
-<p>via an implementable approximation using weighting filters and instruments.</p>
-<p>Refer to the original paper by Van Heusden et al. (2011) for theoretical details.</p>
+<p>where <span class="arithmatex">\( G \)</span> is the unknown plant and <span class="arithmatex">\( K(\rho) \)</span> is a fixed‑structure controller linearly parameterized by <span class="arithmatex">\( \rho \)</span>. Direct minimization of <span class="arithmatex">\( J_{\mathrm{MR}} \)</span> is non‑convex and requires a model of <span class="arithmatex">\( G \)</span>. NCbT avoids these difficulties through a correlation‑based approximation.</p>
+<h2 id="correlation-approximation">Correlation approximation</h2>
+<p>NCbT exploits the approximation</p>
+<div class="arithmatex">\[
+\frac{1}{1+K(\rho)G} \approx 1-M,
+\]</div>
+<p>which holds near the optimal solution. This leads to the <strong>approximate error</strong>:</p>
+<div class="arithmatex">\[
+\varepsilon(t,\rho) = M u(t) - (1-M) K(\rho) y(t).
+\]</div>
+<p>The key idea is to choose <span class="arithmatex">\( \rho \)</span> so that <span class="arithmatex">\( \varepsilon(t,\rho) \)</span> becomes <strong>uncorrelated</strong> with external instrumental signals, ensuring asymptotic noise rejection. The resulting estimator is solved via a single least‑squares problem.</p>
+<h2 id="weighting-filter-w">Weighting filter <span class="arithmatex">\( W \)</span></h2>
+<p>To improve conditioning and efficiency, NCbT introduces a filter <span class="arithmatex">\( W \)</span> that “whitens” the input spectrum. In the frequency domain:</p>
+<div class="arithmatex">\[
+W(e^{-j\omega}) = \frac{1 - M(e^{-j\omega})}{\Phi_u(\omega)},
+\]</div>
+<p>where <span class="arithmatex">\( \Phi_u(\omega) \)</span> is the power spectral density of <span class="arithmatex">\( u(t) \)</span>. In discrete time, <span class="arithmatex">\( W \)</span> is implemented using spectral factorization (e.g., an AR model of <span class="arithmatex">\( u \)</span>).</p>
+<h2 id="instrumental-variables-and-leastsquares-solution">Instrumental variables and least‑squares solution</h2>
+<p>Let <span class="arithmatex">\( u_W = W * u \)</span> be the filtered input. Instruments are built by stacking a symmetric window of <span class="arithmatex">\( 2\ell+1 \)</span> lags:</p>
+<div class="arithmatex">\[
+\zeta_w(t) = \big[u_W(t+\ell),\, u_W(t+\ell-1),\, \dots,\, u_W(t-\ell)\big]^T.
+\]</div>
+<p>Regressors are defined as</p>
+<div class="arithmatex">\[
+\phi(t) = \beta(q^{-1})\big[(1-M) y(t)\big],
+\]</div>
+<p>where <span class="arithmatex">\( \beta(q^{-1}) \)</span> is a vector of stable basis functions that define the controller structure (e.g., integrator, delays, FIR). The independent term is <span class="arithmatex">\( u_M = M u \)</span>.</p>
+<p>After truncating the signals to avoid boundary effects, the sample matrices are</p>
+<div class="arithmatex">\[
+Q = \frac{1}{N}\sum_{t} \zeta_w(t) \phi^T(t), \qquad
+Z = \frac{1}{N}\sum_{t} \zeta_w(t) u_M(t).
+\]</div>
+<p>The controller parameters are obtained by solving the least‑squares problem:</p>
+<div class="arithmatex">\[
+\hat{\rho} = (Q^T Q)^{-1} Q^T Z.
+\]</div>
+<h2 id="hyperparameter-choices">Hyperparameter choices</h2>
+<ul>
+<li><strong>Window length <span class="arithmatex">\( l \)</span></strong> – controls the bias‑variance trade‑off. Typical values: 10–50. Larger <span class="arithmatex">\( l \)</span> reduces variance but may increase bias and degrade conditioning.</li>
+<li><strong>Basis <span class="arithmatex">\( \beta \)</span></strong> – must be stable and capture the expected controller dynamics.</li>
+<li><strong>Reference model <span class="arithmatex">\( M \)</span></strong> – stable, strictly proper.</li>
+</ul>
 
 
 
