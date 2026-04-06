@@ -1,6 +1,6 @@
-<div align="center">
-  <img src="docs/img/pyncbt-logo.png" alt="pyncbt logo" width="280"/>
-</div>
+<p align="center">
+  <img src="img/pyncbt-logo.png" width="50%" alt="pyncbt logo">
+</p>
 
 # pyncbt
 
