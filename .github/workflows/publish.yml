@@ -3,7 +3,7 @@ name: Publish Python Package to PyPI
 on:
   release:
     types: [published]
-  workflow_dispatch:   # permite disparar manualmente
+  workflow_dispatch:
 
 jobs:
   deploy:
@@ -17,11 +17,11 @@ jobs:
     - name: Install build dependencies
       run: |
         python -m pip install --upgrade pip
-        pip install build twine
+        pip install build twine wheel   # ← wheel adicionado
     - name: Clean previous builds
       run: |
         rm -rf dist build *.egg-info
-    - name: Build package (isolated)
+    - name: Build package
       run: |
         python -m build --no-isolation
     - name: Check package metadata
